@@ -7,11 +7,6 @@ import os
 from setuptools import setup
 
 import versioneer
-versioneer.VCS = 'git'
-versioneer.versionfile_source = 'djheroku/_version.py'
-versioneer.versionfile_build = None
-versioneer.tag_prefix = ''
-versioneer.parentdir_prefix = 'Djheroku-'
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'djheroku.fixture'
 
