@@ -33,7 +33,7 @@ def social_slurp(mapping):
 
     result = {}
 
-    for app, (app_id, api_key) in mapping.iteritems():
+    for app, (app_id, api_key) in mapping.items():
         result.update(inner_slurp(app, app_id, api_key))
 
     return result

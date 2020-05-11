@@ -1,5 +1,5 @@
 ''' Djheroku tests '''
-from __future__ import with_statement
+
 
 # pylint: disable=R0904
 
@@ -55,7 +55,7 @@ def getitem(name):
 
 def setitem(name, value):
     ''' Store mocked environment changes in an alternative dictionary '''
-    print name, value
+    print(name, value)
     MODIFIED_ENVIRON[name] = value
 
 def update(values):
@@ -278,24 +278,24 @@ class TestDjheroku(unittest2.TestCase):  # pylint: disable=R0904
         result = sendgrid()
         self.assertIsInstance(result, dict)
         with self.assertRaises(KeyError):
-            print result['EMAIL_HOST_USER']
+            print(result['EMAIL_HOST_USER'])
         with self.assertRaises(KeyError):
-            print result['EMAIL_HOST_PASSWORD']
+            print(result['EMAIL_HOST_PASSWORD'])
         with self.assertRaises(KeyError):
-            print result['EMAIL_HOST']
+            print(result['EMAIL_HOST'])
         with self.assertRaises(KeyError):
-            print result['EMAIL_PORT']
+            print(result['EMAIL_PORT'])
         with self.assertRaises(KeyError):
-            print result['EMAIL_USE_TLS']
+            print(result['EMAIL_USE_TLS'])
 
         ENVIRON_DICT['SENDGRID_USERNAME'] = 'carol'
         del ENVIRON_DICT['SENDGRID_PASSWORD']
 
         result = sendgrid()
         with self.assertRaises(KeyError):
-            print result['EMAIL_HOST_USER']
+            print(result['EMAIL_HOST_USER'])
         with self.assertRaises(KeyError):
-            print result['EMAIL_HOST_PASSWORD']
+            print(result['EMAIL_HOST_PASSWORD'])
 
     def test_mailgun_basic(self):
         ''' Test Mailgun configuration '''
@@ -314,17 +314,17 @@ class TestDjheroku(unittest2.TestCase):  # pylint: disable=R0904
         del ENVIRON_DICT['MAILGUN_API_KEY']
         result = mailgun()
         with self.assertRaises(KeyError):
-            print result['EMAIL_HOST_USER']
+            print(result['EMAIL_HOST_USER'])
         with self.assertRaises(KeyError):
-            print result['EMAIL_HOST_PASSWORD']
+            print(result['EMAIL_HOST_PASSWORD'])
         with self.assertRaises(KeyError):
-            print result['EMAIL_HOST']
+            print(result['EMAIL_HOST'])
         with self.assertRaises(KeyError):
-            print result['EMAIL_PORT']
+            print(result['EMAIL_PORT'])
         with self.assertRaises(KeyError):
-            print result['EMAIL_USE_TLS']
+            print(result['EMAIL_USE_TLS'])
         with self.assertRaises(KeyError):
-            print result['MAILGUN_API_KEY']
+            print(result['MAILGUN_API_KEY'])
 
     def test_cloudant(self):
         ''' Test Cloudant variables '''
@@ -333,7 +333,7 @@ class TestDjheroku(unittest2.TestCase):  # pylint: disable=R0904
         del ENVIRON_DICT['CLOUDANT_URL']
         result = cloudant()
         with self.assertRaises(KeyError):
-            print result['CLOUDANT_URL']
+            print(result['CLOUDANT_URL'])
 
     def test_memcachier(self):
         ''' Test Memcachier variables '''

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # pylint: disable=invalid-name
 ''' Setuptools installation script for Djheroku '''
-from __future__ import with_statement
+
 import os
 
 from setuptools import setup

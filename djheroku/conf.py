@@ -10,7 +10,7 @@ def env_to_django(mappings):
         try:
             result[django_var] = os.environ[env]
         except:
-            print 'Problem fetching environment variable %s' % env
+            print('Problem fetching environment variable {}'.format(env))
             raise
 
     return result
@@ -23,7 +23,7 @@ def env_to_env(mappings):
         try:
             result[new_env] = os.environ[env]
         except:
-            print 'Problem fetching environment variable %s' % env
+            print(Problem fetching environment variable {}'.format(env))
             raise
 
     os.environ.update(result)
